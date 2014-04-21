@@ -1,0 +1,52 @@
+name:                  art-conduit
+version:               0.0.1
+license:               AllRightsReserved
+author:                Mark Hibberd <mark@hibberd.id.au>
+maintainer:            Mark Hibberd <mark@hibberd.id.au>
+copyright:             (c) 2013 Mark Hibberd
+synopsis:              Art of Stream Processing, Conduit Edition
+category:              Acme
+homepage:              https://github.com/markhibberd/art-of-stream-processing-talk
+bug-reports:           https://github.com/markhibberd/art-of-stream-processing-talk
+cabal-version:         >= 1.8
+build-type:            Simple
+description:           Art of Stream Processing, Conduit Edition
+
+source-repository      head
+  type:                git
+  location:            https://github.com/markhibberd/art-of-stream-processing-talk.git
+
+flag                   small_base
+  description:         Choose the new, split-up base package.
+
+library
+  extensions:          NoImplicitPrelude
+
+  build-depends:
+                       base                            >= 3          && < 5
+                     , text                            >= 0.11
+                     , conduit                         == 1.1.0.2
+                     , conduit-combinators             == 0.2.5
+                     , conduit-extra                   == 1.1.0.1
+                     , lens                            == 4.1.2
+
+  ghc-options:
+                       -Wall
+
+  hs-source-dirs:
+                       src
+
+  exposed-modules:
+                       Art.Conduit
+
+executable             art-conduit
+    ghc-options:       -Wall -threaded -O2 -with-rtsopts=-T
+    main-is:           ../src/main.hs
+    hs-source-dirs:    dist
+    build-depends:     base, art-conduit
+
+test-suite             spec
+  type:                exitcode-stdio-1.0
+  main-is:             test.hs
+  hs-source-dirs:      test
+  build-depends:       base, hspec, QuickCheck, art-conduit
