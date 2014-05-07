@@ -1,3 +1,5 @@
+import AssemblyKeys._
+
 organization := "io.mth"
 
 name := "art-scalaz-stream"
@@ -9,9 +11,12 @@ scalaVersion := "2.11.0"
 scalacOptions := Seq(
   "-deprecation",
   "-unchecked",
-  "-optimise",
-  "-Ywarn-all",
   "-Xlint",
   "-feature",
   "-language:_"
 )
+
+
+assemblySettings
+
+mainClass in assembly := None
