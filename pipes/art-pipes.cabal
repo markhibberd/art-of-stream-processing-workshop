@@ -27,6 +27,7 @@ library
                      , pipes-text                      == 0.0.0.10
                      , pipes-group                     == 1.0.0
                      , pipes-bytestring                == 2.0.1
+                     , pipes-safe                      == 2.1.0
                      , lens                            == 4.1.2
                      , transformers                    == 0.3.0.0
                      , foldl                           == 1.0.3
