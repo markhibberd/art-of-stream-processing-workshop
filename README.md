@@ -1,6 +1,38 @@
 The Art of Incremental Stream Processing
 ========================================
 
+This is the workshop material for the YOW LambdaJam 2014 Jam Session.
+
+There are 5 choices (roughly in order of help you will be able to get):
+ - scalaz-stream             - a full project skelton and build
+ - pipes                     - a full project skelton and build
+ - conduit                   - a basic project structure
+ - machines                  - a basic project structure
+ - choose your own adventure - an empty directory
+
+These are not easy libraries to get started with, so it is recommended that:
+ - You work in groups - about 3 or 4 people working togther would be optimal
+ - You (or at least someone in your group) is very familiar with the language
+   you are using Haskell/Scala/Other.
+ - Don't feel like you have to use the streaming libraries, feel free to sketch
+   things out how ever you are comfortable - even loop school is ok - it will be
+   good to compare.
+ - Don't feel like you have to use Haskell or Scala, it will be great to see some
+   clojure / erlang / F# comparisons.
+
+This jam is about having some fun, doing some benchmarking, trying to
+understand how these libraries tick, and learning something. So don't
+get stuck, ask for help, rely heavily on the Hackage docs and Hoogle
+for the Haskell libraries, rely on the source code for scalaz-stream.
+Cheating is winning, because you will likely learn something on the way.
+
+THERE WILL BE AUDIENCE PARTICIPATION, I will be strongly encouraging
+people around the room to jump up and show off there solutions.
+
+
+A Description Language
+----------------------
+
 A psuedo language for defining these problems:
 
 ```
@@ -10,7 +42,8 @@ A psuedo language for defining these problems:
 ```
 
 Note where you see "String" that will be "String" in Scala but should
-be "Text" in Haskell.
+be "Text" in Haskell. When you see "Bytes" that will be ByteString in
+Haskell, and ByteVector in Scala.
 
 Pipelines
 ---------
