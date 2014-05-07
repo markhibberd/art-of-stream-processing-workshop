@@ -4,8 +4,8 @@ The Art of Incremental Stream Processing
 This is the workshop material for the YOW LambdaJam 2014 Jam Session.
 
 There are 5 choices (roughly in order of help you will be able to get):
- - scalaz-stream             - a full project skelton and build
- - pipes                     - a full project skelton and build
+ - scalaz-stream             - a full project skeleton and build
+ - pipes                     - a full project skeleton and build
  - conduit                   - a basic project structure
  - machines                  - a basic project structure
  - choose your own adventure - an empty directory
@@ -82,27 +82,27 @@ elements, and drop the rest.
 
 Note this is probably harder than it sounds!!!
 
-### `tail` - `Pipeline String String`
+`tail` - `Pipeline String String`
 
 Like `head`, process input line by line and only output the last 10 lines,
 ignores the rest.
 
 Note this is probably _a lot_ harder than it sounds!!!
 
-### `nl` - `Pipeline String (String, Int)`
+`nl` - `Pipeline String (String, Int)`
 
 Line numbers, process input line by line, outputting each line with
 the line number.
 
-### `wcl` - `In String -> Int
+`wcl` - `In String -> Int`
 
 Count the number of lines processed by In String.
 
-###  `wc` - `In String -> Count { line :: Int, word :: Int, char }`
+`wc` - `In String -> Count { line :: Int, word :: Int, char }`
 
 Count the number of lines, words and characters processed by In String
 
-### `cksum` - `In String -> Int`
+`cksum` - `In String -> Int`
 
 Produce a simple checkum. The checksum is calculated by xor'ing the ordinal
 value of each character (i.e. ascii code).
@@ -114,24 +114,24 @@ Input and Output
 Next we want to build up some tools to hook our simple stream processors
 up to input and output (files and/or stdin & stdout).
 
-### `tee` - `Pipeline a b -> Out b -> Pipeline a b`
+`tee` - `Pipeline a b -> Out b -> Pipeline a b`
 
 Such that all output goes to `Out b` as well as the output pipeline.
 
-### `read` - `FileName -> In Text`
+`read` - `FileName -> In Text`
 
 Take a filename and produce a text input.
 
-### `readBytes` - `FileName -> In Bytes`
+`readBytes` - `FileName -> In Bytes`
 
 Take a filename and produce a byte input (Bytes will be language specific -
 ByteString in Haskell or ByteVector in Scala).
 
-### `readStdIn` - `In Text`
+`readStdIn` - `In Text`
 
 Read standard input as text.
 
-### `readStdInBytes` - `In Bytes`
+`readStdInBytes` - `In Bytes`
 
 Read standard input as bytes.
 
