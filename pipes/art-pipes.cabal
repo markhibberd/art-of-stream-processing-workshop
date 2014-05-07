@@ -20,19 +20,20 @@ flag                   small_base
   description:         Choose the new, split-up base package.
 
 library
-  extensions:          NoImplicitPrelude
-
   build-depends:
                        base                            >= 3          && < 5
                      , text                            >= 0.11
                      , pipes                           == 4.1.1
                      , pipes-text                      == 0.0.0.10
                      , pipes-group                     == 1.0.0
+                     , pipes-bytestring                == 2.0.1
                      , lens                            == 4.1.2
+                     , transformers                    == 0.3.0.0
+                     , foldl                           == 1.0.3
 
 
   ghc-options:
-                       -Wall
+                       -Wall  -fno-warn-unused-imports
 
   hs-source-dirs:
                        src
