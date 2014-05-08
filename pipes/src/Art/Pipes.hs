@@ -28,5 +28,30 @@ import           System.Exit
 main :: IO ()
 main = getArgs >>= \args -> case args of
   ["cat"]   -> undefined
+  ["yes"]   -> undefined
+  ["head"]   -> undefined
+  ["tail"]   -> undefined
+  ["grep"]    -> undefined
+  ["wcl"]    -> undefined
   ["wc"]    -> undefined
   _         -> putStrLn "usage: art-pipes COMMAND" >> exitFailure
+
+
+data WordCount = WordCount {
+    line :: Int
+  , word :: Int
+  , char :: Int
+  } deriving Show
+
+
+cat' :: Monad m => Pipe a a m r
+cat' =
+  error "A direct cat implementation"
+
+fastcat' :: Effect IO ()
+fastcat' =
+  error "A direct cat implementation"
+
+yes' :: Monad m => Producer Text m r
+yes' =
+  error "A yes implementation"
